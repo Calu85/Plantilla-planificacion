@@ -274,3 +274,6 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+# Ignore any pdf file in the root (useful to exclude the generated document, but include files in the image folder)
+/*.pdf
