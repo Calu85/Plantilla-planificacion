@@ -277,3 +277,6 @@ TSWLatexianTemp*
 
 # Ignore any pdf file in the root (useful to exclude the generated document, but include files in the image folder)
 /*.pdf
+
+#Ignoro pdfs generados desde svg
+Figuras/*.pdf
