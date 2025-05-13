@@ -5,7 +5,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Telemonitoreo IoT para detección de patologías cardíacas} 
+\titulo{Vinculación de dispositivos IoT para monitoreo remoto de pacientes crónicos} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -19,13 +19,13 @@
 \autor{Bioing. Carlos Augusto Zelayeta}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Bioin. Sergio Liberczuk}
+\director{Bioing. Sergio Liberczuk}
 \pertenenciaDirector{Virtual Sense S.A.} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{CEO de VS}
+\cliente{Ing. Leandro Bergher}
 \empresaCliente{Virtual Sense S.A.}
  
 \fechaINICIO{29 de abril de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
@@ -84,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en en la vinculación de instrumentos de medición de presión arterial al sistema Virtual Sense. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ 18000000, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -105,11 +105,11 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red}
-Acá copié lo que puse en la propuesta, pero lo tendría que modificar levente (tal vez sacar espcificidades como el motor de base de datos, o cosas así, que no tienen mucho sentido en este capítulo).
-\end{consigna}
+La empresa Virtual Sense ofrece un servicio de monitoreo remoto de pacientes con enfermedades crónicas. Para este objetivo, la empresa posee una aplicación móvil que recolecta datos periódicamente, tales como presión arterial, saturación de oxígeno, glucemia, y otros indicadores de acuerdo a cada patología, desde dispositivos de medición vinculados a la plataforma. Estos datos son reportados a un sistema en el cual los profesionales médicos pueden acceder para realizar un seguimiento de los pacientes. Los pacientes, por su par parte, acceden también a contenido de consulta aprobado por su médico y a comunicación por chat con los profesionales.
 
-La empresa VirtualSense ofrece un servicio de monitoreo remoto de pacientes con enfermedades crónicas que permite la detección temprana y automática de arritmias cardíacas asintomáticas. Para este objetivo, la empresa posee una aplicación móvil que recolecta datos periódicamente, tales como presión arterial, saturación de oxígeno, glucemia, y otros indicadores de acuerdo a cada patología, desde dispositivos de medición vinculados a la plataforma. Estos datos son reportados a un sistema en el cual los profesionales médicos pueden acceder para realizar un seguimiento de los pacientes. La empresa ha encontrado gran adopción en médicos con pacientes que habitan lugares remotos, para los cuales es difícil o costoso la realización de visitas periódicas al consultorio. 
+La recolección periódica de mediciones permite el procesamiento de datos de manera continua, lo que a su vez posibilidad la detección temprana y automática de arritmias cardíacas asintomáticas y otros eventos adversos.
+ 
+La empresa ha encontrado gran adopción en médicos con pacientes que habitan lugares remotos, para los cuales es difícil o costoso la realización de visitas periódicas al consultorio. 
 
 El stack de tecnología de la empresa consiste actualmente en una aplicación móvil que permite conectarse a diversos dispositivos (electrocardiógrafos, tensiómetros, etc). Esta aplicación reporta datos, mediante protocolo https, hacia Amazon Web Services, y los datos son almacenados utilizando MySQL. Un panel de control web permite a los profesionales acceder a los datos de sus pacientes, así como a los pacientes acceder a sus propios datos. Este panel posee los permisos de acceso necesarios para que los pacientes solo puedan acceder a sus propios datos, y los profesionales accedan solamente a los datos de sus pacientes. En la figura \ref{fig:diagBloques} se describe brevemente el sistema implementado por la empresa para los dispositivos ya integrados.
 
@@ -120,8 +120,8 @@ El stack de tecnología de la empresa consiste actualmente en una aplicación m�
 \label{fig:diagBloques}
 \end{figure}
 
-La propuesta de trabajo realizada por la empresa consiste en establecer una comunicación entre el sistema de la empresa y algunos dispositivos muy utilizados por los pacientes pero para los cuales actualmente no poseen vinculación automática.  
-Los tensiómetros de marca Omron son considerados dispositivos prioritarios por la empresa, dado su uso muy extendido entre los pacientes. La empresa Omron ofrece varias opciones de integración de sus dispositivos, ya que pueden ser vinculados directamente mediante Bluetooth Low Energy a aplicaciones externas, o bien se puede realizar una vinculación a través de una API que permite comunicación entre la aplicación de Omron y aplicaciones externas (En esta página se realiza una comparación a grandes rasgos de las opciones disponibles). En base a estas opciones, se evaluará cuál es la estrategia de vinculación óptima para conectar los dispositivos a la aplicación de Virtual Sense, utilizando criterios como, por ejemplo, costo, posibilidad de mantenimiento posterior de la integración, tiempo de desarrollo y cantidad de modelos disponibles en el mercado para cada alternativa. Una vez definida la estrategia óptima para la vinculación del dispositivo, se implementará la vinculación para un dispositivo de la marca (a definir por la empresa).
+La propuesta de trabajo realizada por Virtual Sense consiste en establecer una comunicación entre el sistema de la empresa y algunos dispositivos muy utilizados por los pacientes pero para los cuales actualmente no poseen vinculación automática.  
+Los tensiómetros de marca Omron son considerados dispositivos prioritarios por la empresa, dado su uso muy extendido entre los pacientes y la alta confiabilidad de las mediciones que producen. La empresa Omron ofrece varias opciones de integración de sus dispositivos, ya que pueden ser vinculados directamente mediante Bluetooth Low Energy a aplicaciones externas, o bien se puede realizar una vinculación a través de una API que permite comunicación entre la aplicación de Omron y aplicaciones externas. En base a estas opciones, se evaluará cuál es la estrategia de vinculación óptima para conectar los dispositivos a la aplicación de Virtual Sense, utilizando criterios como, por ejemplo, costo, posibilidad de mantenimiento posterior de la integración, tiempo de desarrollo y cantidad de modelos disponibles en el mercado para cada alternativa. Una vez definida la estrategia óptima para la vinculación del dispositivo, se implementará la vinculación para un dispositivo de la marca (a definir por la empresa).
 La figura \ref{fig:diagAlternativas} representa las alternativas a evaluar para vincular los dispositivos:
 
 \begin{figure}[htpb]
@@ -143,20 +143,14 @@ La figura \ref{fig:diagAlternativas} representa las alternativas a evaluar para 
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Cliente       & \clientename      &\empclientename	&    -    	\\ \hline
+Cliente       & \clientename      &\empclientename	&    Presidente    	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores & Dr. Brian Wundheiler  & Virtual Sense S.A.	& Jefe de desarrollo \\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & Empleado VS1 \newline Empleado VS2
+Orientador    & \supname	      & \pertesupname 	& Jefe científico \\ \hline
+Equipo        & Lucas Ricardo Grana \newline Emilio Borovski
 	&     Virtual Sense S.A.         	&  Desarrolladores      	\\ \hline
 Usuario final &         -         &      -       	& Usuarios del servicio \\ \hline
 \end{tabularx}
 \end{table}
- 
-\begin{itemize}
-	\item Orientador: el Bioing. Sergio Liberczuk ....
-	\item Colaborador: el Dr. Brian .....
-\end{itemize}
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
@@ -178,7 +172,7 @@ El proyecto incluye:
 	\end{itemize}
 \end{itemize}
 
-El proyecto no incluye la validación de esta comunicación en todos los dispositivos de la empresa ni el despliege de esta funcionalidad en la versión de producción del sistema Virtual Sense.
+El proyecto no incluye la validación de esta comunicación en todos los dispositivos de la empresa ni el despliegue de esta funcionalidad en la versión de producción del sistema Virtual Sense.
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
@@ -186,9 +180,8 @@ El proyecto no incluye la validación de esta comunicación en todos los disposi
 Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Se contará con los dispositivos necesarios, provistos por la empresa.
+	\item Virtual Sense proveerá los dispositivos necesarios para el proyecto.
 	\item Virtual Sense establecerá el contacto con Omron para la gestión de licencias en caso de ser necesario.
-	\item \textcolor{red}{No se me ocurre mucho, puse estos dos por poner algo.} 
 \end{itemize}
 
 
