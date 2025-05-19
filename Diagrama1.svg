@@ -7,10 +7,10 @@
    stroke-linecap="square"
    stroke-miterlimit="10"
    id="svg39"
-   sodipodi:docname="Propuesta de Trabajo Final.svg"
+   sodipodi:docname="Diagrama2.svg"
    width="706.85901"
    height="458.88855"
-   inkscape:version="1.4.1-rc (06eac75fbf, 2025-03-29)"
+   inkscape:version="1.4.2 (2aeb623e1d, 2025-05-12)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -37,8 +37,8 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="0.67749999"
-     inkscape:cx="430.99631"
-     inkscape:cy="405.16606"
+     inkscape:cx="556.45757"
+     inkscape:cy="493.72694"
      inkscape:window-width="1850"
      inkscape:window-height="1016"
      inkscape:window-x="0"
@@ -277,7 +277,7 @@
        x="499.82605"
        y="212.83398"
        style="font-size:17.3333px;text-align:center;text-anchor:middle;fill:#000000"
-       id="tspan47-3">https</tspan></text>
+       id="tspan47-3">HTTPS</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:17.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e8cc84"

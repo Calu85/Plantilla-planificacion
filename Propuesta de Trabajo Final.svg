@@ -10,7 +10,7 @@
    sodipodi:docname="Propuesta de Trabajo Final.svg"
    width="706.85901"
    height="458.88855"
-   inkscape:version="1.4.1-rc (06eac75fbf, 2025-03-29)"
+   inkscape:version="1.4.2 (2aeb623e1d, 2025-05-12)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -36,9 +36,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.95812968"
-     inkscape:cx="66.796804"
-     inkscape:cy="249.96616"
+     inkscape:zoom="1.355"
+     inkscape:cx="112.91513"
+     inkscape:cy="313.28414"
      inkscape:window-width="1850"
      inkscape:window-height="1016"
      inkscape:window-x="0"
@@ -272,7 +272,7 @@
        x="499.82605"
        y="212.83398"
        style="font-size:17.3333px;text-align:center;text-anchor:middle;fill:#000000"
-       id="tspan47-3">https</tspan></text>
+       id="tspan47-3">HTTPS</tspan></text>
   <text
      xml:space="preserve"
      style="font-size:17.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e8cc84"
@@ -305,14 +305,14 @@
   <text
      xml:space="preserve"
      style="font-size:17.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e8cc84"
-     x="178.88826"
+     x="183.3163"
      y="159.08342"
      id="text1"><tspan
        sodipodi:role="line"
-       x="178.88826"
+       x="183.3163"
        y="159.08342"
        style="font-size:17.3333px;text-align:center;text-anchor:middle;fill:#000000"
-       id="tspan1">Alterntiva 1</tspan></text>
+       id="tspan1">Alternativa 1</tspan></text>
   <rect
      style="opacity:1;fill:none;fill-opacity:1;stroke:#90846c;stroke-width:2.70483;stroke-dasharray:2.70483, 5.40962;stroke-dashoffset:0"
      id="rect2"
@@ -323,14 +323,14 @@
   <text
      xml:space="preserve"
      style="font-size:17.3333px;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e8cc84"
-     x="190.36896"
+     x="196.27301"
      y="442.96985"
      id="text2"><tspan
        sodipodi:role="line"
-       x="190.36896"
+       x="196.27301"
        y="442.96985"
        style="font-size:17.3333px;text-align:center;text-anchor:middle;fill:#000000"
-       id="tspan2">Alterntiva 2</tspan></text>
+       id="tspan2">Alternativa 2</tspan></text>
   <rect
      style="opacity:1;fill:#e8cc84;fill-opacity:1;stroke:#000000;stroke-width:0.923576;stroke-dasharray:none;stroke-dashoffset:0"
      id="rect3"
