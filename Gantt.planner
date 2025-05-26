@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<project name="" company="" manager="" phase="" project-start="20250701T000000Z" mrproject-version="2" calendar="2">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Working" description="A default working day"/>
+      <day-type id="1" name="Nonworking" description="A default non working day"/>
+      <day-type id="2" name="Use base" description="Use day from base calendar"/>
+    </day-types>
+    <calendar id="1" name="CEIOT">
+      <default-week sat="0"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+    <calendar id="2" name="Default">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="Investigaci&#xF3;n" note="" work="288000" start="20250701T000000Z" end="20250728T120000Z" work-start="20250701T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="2" name="Lectura de documentaci&#xF3;n Omron" note="" work="72000" start="20250701T000000Z" end="20250707T120000Z" work-start="20250701T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="3" name="Aprendizaje Virtual Sense" note="" work="36000" start="20250707T120000Z" end="20250710T100000Z" work-start="20250708T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="2" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="4" name="Aprendizaje Google Health" note="" work="36000" start="20250710T100000Z" end="20250714T120000Z" work-start="20250710T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="3" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="5" name="Aprendizaje Apple Health" note="" work="36000" start="20250714T120000Z" end="20250717T100000Z" work-start="20250715T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="4" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="6" name="Revisi&#xF3;n de dispositivos ya vinculados" note="" work="72000" start="20250717T100000Z" end="20250724T100000Z" work-start="20250717T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="5" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="7" name="Definici&#xF3;n del modelo a vincular" note="" work="36000" start="20250724T100000Z" end="20250728T120000Z" work-start="20250724T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="6" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="8" name="Implementaci&#xF3;n" note="" work="936000" start="20250728T120000Z" end="20251027T120000Z" work-start="20250729T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="9" name="Prueba de concepto por BLE" note="" work="144000" start="20250728T120000Z" end="20250811T120000Z" work-start="20250729T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="7" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="10" name="Prueba de concepto por API" note="" work="144000" start="20250811T120000Z" end="20250825T120000Z" work-start="20250812T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="9" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="11" name="Investigaci&#xF3;n de escalabilidad" note="" work="72000" start="20250825T120000Z" end="20250901T120000Z" work-start="20250826T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="10" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="12" name="Implementaci&#xF3;n de vinculaci&#xF3;n" note="" work="144000" start="20250901T120000Z" end="20250915T120000Z" work-start="20250902T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="11" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="13" name="Env&#xED;o de datos a la nube" note="" work="144000" start="20250915T120000Z" end="20250929T120000Z" work-start="20250916T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="12" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="14" name="Modificaciones en el backend" note="" work="144000" start="20250929T120000Z" end="20251013T120000Z" work-start="20250930T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="13" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="15" name="Modificaciones en panel de control" note="" work="144000" start="20251013T120000Z" end="20251027T120000Z" work-start="20251014T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="14" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="16" name="Verificaci&#xF3;n" note="" work="324000" start="20251027T120000Z" end="20251127T100000Z" work-start="20251028T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="17" name="Testeo de conexi&#xF3;n" note="" work="72000" start="20251027T120000Z" end="20251103T120000Z" work-start="20251028T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="15" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="18" name="Testeo del env&#xED;o de datos" note="" work="36000" start="20251103T120000Z" end="20251106T100000Z" work-start="20251104T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="17" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="19" name="Testeo del panel de control" note="" work="36000" start="20251106T100000Z" end="20251110T120000Z" work-start="20251106T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="18" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="20" name="Testo del backend" note="" work="72000" start="20251110T120000Z" end="20251117T120000Z" work-start="20251111T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="19" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="21" name="Testeo de conexi&#xF3;n a servicios de Google y Apple" note="" work="108000" start="20251117T120000Z" end="20251127T100000Z" work-start="20251118T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="20" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+    <task id="22" name="Documentaci&#xF3;n" note="" work="288000" start="20251127T100000Z" end="20251225T100000Z" work-start="20251127T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="23" name="Escritura de instrucciones para clientes" note="" work="72000" start="20251127T100000Z" end="20251204T100000Z" work-start="20251127T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="21" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="24" name="Escritura de memoria de dise&#xF1;o" note="" work="144000" start="20251204T100000Z" end="20251218T100000Z" work-start="20251204T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="23" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="25" name="Elaboraci&#xF3;n de presentaci&#xF3;n" note="" work="72000" start="20251218T100000Z" end="20251225T100000Z" work-start="20251218T100000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="24" type="FS"/>
+        </predecessors>
+      </task>
+    </task>
+  </tasks>
+  <resource-groups/>
+  <resources/>
+  <allocations/>
+</project>
