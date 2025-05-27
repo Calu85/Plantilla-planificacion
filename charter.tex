@@ -16,10 +16,10 @@
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
-\autor{Bioing. Carlos Augusto Zelayeta}
+\autor{Ing. Carlos Augusto Zelayeta}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Bioing. Sergio Liberczuk}
+\director{Ing. Sergio Liberczuk}
 \pertenenciaDirector{Virtual Sense S.A.} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
@@ -30,7 +30,7 @@
  
 \fechaINICIO{29 de abril de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{17 de junio de 2025} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{diciembre de 2025}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{febrero de 2026}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -58,12 +58,10 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 5 inclusive                & 13 de mayo de 2025 \\ \hline
-2      & Se completa hasta el punto 9 inclusive \newline
-		  Se implementan las correcciones de la devolución de la versión 1 
-                                                  & 20 de mayo de 2025 \\ \hline
-3      & Se completa hasta el punto 12 inclusive                & 27 de mayo de 2025 \\ \hline
+0      & Creación del documento                     &\fechaInicioName \\ \hline
+1      & Se completa hasta el punto 5 inclusive     & 13 de mayo de 2025 \\ \hline
+2      & Se completa hasta el punto 9 inclusive     & 20 de mayo de 2025 \\ \hline
+3      & Se completa hasta el punto 12 inclusive    & 27 de mayo de 2025 \\ \hline
 %4      & Se completa el plan	                                 & {día} de mayo de 2025 \\ \hline
 
 % Si hay más correcciones pasada la versión 4 también se deben especificar acá
@@ -106,9 +104,9 @@ Se adjunta a esta acta la planificación inicial.
 
 La empresa Virtual Sense ofrece un servicio de monitoreo remoto de pacientes con enfermedades crónicas. Para este objetivo, la empresa posee una aplicación móvil que recolecta datos periódicamente, tales como presión arterial, saturación de oxígeno, glucemia, y otros indicadores de acuerdo a cada patología, desde dispositivos de medición vinculados a la plataforma. Estos datos son reportados a un sistema en el cual los profesionales médicos pueden acceder para realizar un seguimiento de los pacientes. Los pacientes, por su par parte, acceden también a contenido de consulta aprobado por su médico y a comunicación por chat con los profesionales.
 
-La recolección periódica de mediciones permite el procesamiento de datos de manera continua, lo que a su vez posibilita la detección temprana y automática de arritmias cardíacas asintomáticas y otros eventos adversos. La empresa ha encontrado gran adopción por parte de médicos con pacientes que habitan lugares remotos, para los que es difícil o costoso la realización de visitas periódicas al consultorio. 
+La recolección periódica de mediciones permite el procesamiento de datos de manera continua, lo que a su vez posibilita la detección temprana y automática de arritmias cardíacas asintomáticas y otros eventos adversos. La empresa ha encontrado gran adopción por parte de médicos con pacientes que habitan lugares remotos, para los quienes difícil o costoso la realización de visitas periódicas al consultorio. 
 
-El stack de tecnología de la empresa consiste actualmente en una aplicación móvil que permite conectarse a diversos dispositivos (electrocardiógrafos, tensiómetros, etc). Esta aplicación reporta datos mediante protocolo HTTPS hacia Amazon Web Services y luego los datos son almacenados utilizando MySQL. Un panel de control web permite a los profesionales acceder a los datos de sus pacientes, así como a los pacientes acceder a sus propios datos. Este panel posee los permisos de acceso necesarios para que los usuarios solo puedan acceder a sus propios datos, y los profesionales accedan solamente a los datos de sus pacientes. En la figura \ref{fig:diagBloques} se describe brevemente el sistema implementado por la empresa para los dispositivos ya integrados.
+El stack de tecnología de la empresa consiste actualmente en una aplicación móvil que permite conectarse a diversos dispositivos (electrocardiógrafos, tensiómetros, etc). Esta aplicación reporta datos mediante protocolo HTTPS hacia Amazon Web Services y luego son almacenados utilizando MySQL. Un panel de control web permite a los profesionales acceder a los datos de sus pacientes, así como a los pacientes acceder a sus propios datos. Este panel posee los permisos de acceso necesarios para que los usuarios solo puedan acceder a sus propios datos, y los profesionales accedan solamente a los datos de sus pacientes. En la figura \ref{fig:diagBloques} se describe brevemente el sistema implementado por la empresa para los dispositivos ya integrados.
 
 \begin{figure}[htpb]
 \centering 
@@ -117,7 +115,7 @@ El stack de tecnología de la empresa consiste actualmente en una aplicación m�
 \label{fig:diagBloques}
 \end{figure}
 
-La propuesta de trabajo realizada por Virtual Sense consiste en establecer una comunicación entre el sistema de la empresa y algunos dispositivos muy utilizados por los pacientes, pero para los cuales actualmente no poseen vinculación automática.  
+La propuesta de trabajo realizada por Virtual Sense consiste en establecer una comunicación entre el sistema de la empresa y algunos dispositivos muy utilizados por los pacientes, pero que actualmente no poseen vinculación automática.
 Los tensiómetros de marca Omron son considerados dispositivos prioritarios por la empresa, dado su uso muy extendido entre los pacientes y la alta confiabilidad de las mediciones que producen. La empresa Omron ofrece varias opciones de integración de sus dispositivos, ya que pueden ser vinculados directamente mediante Bluetooth Low Energy a aplicaciones externas, o bien se puede realizar una vinculación a través de una API que permite comunicación entre la aplicación de Omron y aplicaciones externas. En base a estas opciones, se evaluará cuál es la estrategia de vinculación óptima para conectar los dispositivos a la aplicación de Virtual Sense, utilizando criterios como, por ejemplo, costo, posibilidad de mantenimiento posterior de la integración, tiempo de desarrollo y cantidad de modelos disponibles en el mercado para cada alternativa. Una vez definida la estrategia óptima para la vinculación del dispositivo, se implementará la vinculación para un dispositivo de la marca (a definir por la empresa).
 La figura \ref{fig:diagAlternativas} representa las alternativas a evaluar para vincular los dispositivos:
 
@@ -204,11 +202,11 @@ Para el desarrollo del presente proyecto se supone que:
 		\begin{enumerate}
 			\item Generar las instrucciones de vinculación orientadas a los usuarios.
 		\end{enumerate}
-	\item Requerimiento de seguridad
+	\item Requerimiento de seguridad:
 		\begin{enumerate}
 			\item Los datos se enviarán usando el protocolo actual de la empresa mediante HTTPS.
 		\end{enumerate}
-	\item Requerimientos de la interfaz en la aplicación.	
+	\item Requerimientos de la interfaz en la aplicación:
 		\begin{enumerate}
 			\item Se debe indicar el estado de la conexión con el dispositivo (conectado o desconectado).
 			\item Se deben mostrar los valores obtenidos luego de una medición.
@@ -220,7 +218,7 @@ Para el desarrollo del presente proyecto se supone que:
 
 \begin{enumerate}
 
-\item ``Como paciente quiero recibir una confirmación de que el tensiómetro está vinculado correctamente."
+\item ``Como paciente quiero recibir una confirmación de que el tensiómetro está vinculado correctamente para saber que puedo utilizarlo sin problemas."
 
 \textit{Story points}: 3 (complejidad: 1, dificultad: 1, incertidumbre: 1)
 
@@ -228,7 +226,7 @@ Para el desarrollo del presente proyecto se supone que:
 
 \textit{Story points}: 13 (complejidad: 3, dificultad: 5, incertidumbre: 3)
 
-\item ``Como paciente quiero ver mis mediciones en el panel de control para ."
+\item ``Como paciente quiero ver mis mediciones en el panel de control para confirmar que están subidas."
 
 \textit{Story points}: 8 (complejidad: 2, dificultad: 2, incertidumbre: 3)
 
@@ -258,42 +256,45 @@ Los entregables del proyecto son:
 \label{sec:wbs}
 
 \begin{enumerate}
-\item Investigación (80 h)
+\item Investigación (100 h)
 	\begin{enumerate}
 	\item Lectura de documentación técnica de Omron (20 h).
-	\item Aprendizaje del funcionamiento del sistema Virtual Sense (10 h).
+	\item Aprendizaje del funcionamiento del sistema Virtual Sense (20 h).
 	\item Aprendizaje de la plataforma Google Health (10 h).
 	\item Aprendizaje de la plataforma Apple Health (10 h).
-	\item Revisión de estrategias seguidas con tensiómetros de otras marcas ya vinculadas al sistema (20 h).
+	\item Revisión de estrategias de vinculación con tensiómetros de otras marcas ya incorporadas al sistema (30 h).
 	\item Definición del modelo a vincular (10 h).
 	\end{enumerate}
-\item Implementación (260 h)
+\item Implementación (280 h)
 	\begin{enumerate}
+	\item Instalación y preparación de herramientas de trabajo (10 h).
 	\item Prueba de concepto de conexión por BLE (40 h).
 	\item Prueba de concepto de conexión por API (40 h).
-	\item Investigar escalabilidad de las conexiones a otros dispositivos de la marca (20 h).
+	\item Investigar escalabilidad de las conexiones a otros dispositivos de la marca (30 h).
 	\item Implementación de la vinculación elegida (40 h).
 	\item Programación del envío de datos a la nube (40 h).
 	\item Programación de modificaciones en el backend (40 h).
 	\item Implementación de modificaciones en panel de control (40 h).
 	\end{enumerate}
-\item Verificación (90 h)
+\item Verificación (120 h)
 	\begin{enumerate}
-	\item Testeo de la conexión implementada entre tensiómetro y aplicación(20 h).
-	\item Testeo del envío de datos hacia la nube (10 h).
+	\item Testeo de la conexión implementada entre tensiómetro y aplicación (20 h).
+	\item Testeo del envío de datos hacia la nube (20 h).
 	\item Testeo de modificaciones en panel de control (10 h).
 	\item Testeo de modificaciones en el backend (20 h).
+	\item Prueba de usabilidad de la interfaz (20 h).
 	\item Testeo de conexión a servicios Google Health y Apple Health (30 h).
 	\end{enumerate}	
-\item Documentación (80 h)
+\item Documentación (110 h)
 	\begin{enumerate}
+	\item Escritura de instrucciones para clientes (30 h).
+	\item Escritura de documentación para el área de servicio técnico (20 h).
 	\item Escritura de la memoria de proyecto (40 h).
-	\item Escritura de instrucciones para clientes (20 h).
 	\item Elaboración de la presentación (20 h).
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: 510.
+Cantidad total de horas: 610.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
@@ -338,19 +339,19 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
 Horas de ingeniería &
-  \multicolumn{1}{c|}{510} &
+  \multicolumn{1}{c|}{600} &
   \multicolumn{1}{c|}{30000} &
-  \multicolumn{1}{c|}{15300000} \\ \hline
+  \multicolumn{1}{c|}{18000000} \\ \hline
 Tensiómetro &
   \multicolumn{1}{c|}{1} &
   \multicolumn{1}{c|}{300000} &
   \multicolumn{1}{c|}{300000} \\ \hline
-Licencia API &
+Licencia API/BLE &
   \multicolumn{1}{c|}{1} &
   \multicolumn{1}{c|}{100000} &
   \multicolumn{1}{c|}{100000} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{15700000} \\ \hline
+  \multicolumn{1}{c|}{18400000} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -360,12 +361,12 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
 30\% de los costos directos &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{4710000} &
-  \multicolumn{1}{c|}{4710000} \\ \hline
+  \multicolumn{1}{c|}{5520000} &
+  \multicolumn{1}{c|}{5520000} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{4710000} \\ \hline
+  \multicolumn{1}{c|}{5520000} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} & \multicolumn{1}{c|}{20410000} 
+\multicolumn{3}{|c|}{TOTAL} & \multicolumn{1}{c|}{23920000} 
    \\ \hline
 \end{tabularx}%
 \end{table}
