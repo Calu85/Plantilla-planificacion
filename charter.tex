@@ -1,17 +1,17 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 %codirector, % Uncomment to add a codirector to the title page
-]{charter} 
+]{charter}
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Vinculación de dispositivos IoT para monitoreo remoto de pacientes crónicos} 
+\titulo{Vinculación de dispositivos IoT para monitoreo remoto de pacientes crónicos}
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
-\posgrado{Carrera de Especialización en Internet de las Cosas} 
+%\posgrado{Carrera de Especialización en Sistemas Embebidos}
+\posgrado{Carrera de Especialización en Internet de las Cosas}
 %\posgrado{Carrera de Especialización en Inteligencia Artificial}
-%\posgrado{Maestría en Sistemas Embebidos} 
+%\posgrado{Maestría en Sistemas Embebidos}
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
@@ -20,14 +20,14 @@
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Ing. Sergio Liberczuk}
-\pertenenciaDirector{Virtual Sense S.A.} 
+\pertenenciaDirector{Virtual Sense S.A.}
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Ing. Leandro Bergher}
 \empresaCliente{Virtual Sense S.A.}
- 
+
 \fechaINICIO{29 de abril de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{17 de junio de 2025} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{febrero de 2026}	%Fecha de defensa pública del trabajo final
@@ -56,7 +56,7 @@
 \centering
 \begin{tabularx}{\linewidth}{@{}|c|X|c|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                     &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive     & 13 de mayo de 2025 \\ \hline
@@ -91,7 +91,7 @@ Se adjunta a esta acta la planificación inicial.
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\begin{tabular}[c]{@{}c@{}}Dr. Ing. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 \end{tabular}
 \end{table}
@@ -104,12 +104,12 @@ Se adjunta a esta acta la planificación inicial.
 
 La empresa Virtual Sense ofrece un servicio de monitoreo remoto de pacientes con enfermedades crónicas. Para este objetivo, la empresa posee una aplicación móvil que recolecta datos periódicamente, tales como presión arterial, saturación de oxígeno, glucemia, y otros indicadores de acuerdo a cada patología, desde dispositivos de medición vinculados a la plataforma. Estos datos son reportados a un sistema en el cual los profesionales médicos pueden acceder para realizar un seguimiento de los pacientes. Los pacientes, por su par parte, acceden también a contenido de consulta aprobado por su médico y a comunicación por chat con los profesionales.
 
-La recolección periódica de mediciones permite el procesamiento de datos de manera continua, lo que a su vez posibilita la detección temprana y automática de arritmias cardíacas asintomáticas y otros eventos adversos. La empresa ha encontrado gran adopción por parte de médicos con pacientes que habitan lugares remotos, para los quienes difícil o costoso la realización de visitas periódicas al consultorio. 
+La recolección periódica de mediciones permite el procesamiento de datos de manera continua, lo que a su vez posibilita la detección temprana y automática de arritmias cardíacas asintomáticas y otros eventos adversos. La empresa ha encontrado gran adopción por parte de médicos con pacientes que habitan lugares remotos, para los quienes difícil o costoso la realización de visitas periódicas al consultorio.
 
 El stack de tecnología de la empresa consiste actualmente en una aplicación móvil que permite conectarse a diversos dispositivos (electrocardiógrafos, tensiómetros, etc). Esta aplicación reporta datos mediante protocolo HTTPS hacia Amazon Web Services y luego son almacenados utilizando MySQL. Un panel de control web permite a los profesionales acceder a los datos de sus pacientes, así como a los pacientes acceder a sus propios datos. Este panel posee los permisos de acceso necesarios para que los usuarios solo puedan acceder a sus propios datos, y los profesionales accedan solamente a los datos de sus pacientes. En la figura \ref{fig:diagBloques} se describe brevemente el sistema implementado por la empresa para los dispositivos ya integrados.
 
 \begin{figure}[htpb]
-\centering 
+\centering
 \includegraphics[width=.65\textwidth]{./Figuras/Diagrama1.pdf}
 \caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
@@ -120,7 +120,7 @@ Los tensiómetros de marca Omron son considerados dispositivos prioritarios por 
 La figura \ref{fig:diagAlternativas} representa las alternativas a evaluar para vincular los dispositivos:
 
 \begin{figure}[htpb]
-\centering 
+\centering
 \includegraphics[width=.65\textwidth]{./Figuras/Diagrama2.pdf}
 \caption{Posibles alternativas para establecer la vinculación.}
 \label{fig:diagAlternativas}
@@ -136,7 +136,7 @@ La figura \ref{fig:diagAlternativas} representa las alternativas a evaluar para 
 %\label{tab:interesados}
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 Cliente       & \clientename      &\empclientename	&    Presidente    	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
@@ -248,7 +248,7 @@ Los entregables del proyecto son:
 \begin{itemize}
 	\item Código fuente del software de la aplicación.
 	\item Código fuente del software de backend.
-	\item Instrucciones de vinculación para usuarios.	
+	\item Instrucciones de vinculación para usuarios.
 	\item Memoria del trabajo final.
 \end{itemize}
 
@@ -284,7 +284,7 @@ Los entregables del proyecto son:
 	\item Testeo de modificaciones en el backend (20 h).
 	\item Prueba de usabilidad de la interfaz (20 h).
 	\item Testeo de conexión a servicios Google Health y Apple Health (30 h).
-	\end{enumerate}	
+	\end{enumerate}
 \item Documentación (110 h)
 	\begin{enumerate}
 	\item Escritura de instrucciones para clientes (30 h).
@@ -300,7 +300,7 @@ Cantidad total de horas: 610.
 \label{sec:AoN}
 
 \begin{figure}[htpb]
-\centering 
+\centering
 \includegraphics[width=.9\textwidth]{./Figuras/aon.pdf}
 \caption{Diagrama de \textit{Activity on Node}.}
 \label{fig:AoN}
@@ -313,9 +313,9 @@ En la figura \ref{fig:diagGantt} se muestra la planificación del proyecto en fo
 
 \begin{landscape}
 \begin{figure}[htpb]
-\centering 
+\centering
 \includegraphics[height=.67\textheight]{./Figuras/Gantt.pdf}
-\caption{Diagrama de Gantt} 
+\caption{Diagrama de Gantt}
 \label{fig:diagGantt}
 \end{figure}
 
@@ -331,9 +331,9 @@ En la tabla se estima el presupuesto del proyecto. Los valores están expresados
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
@@ -352,9 +352,9 @@ Licencia API/BLE &
   \multicolumn{1}{c|}{100000} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
   \multicolumn{1}{c|}{18400000} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
@@ -366,7 +366,7 @@ Descripción &
 \multicolumn{3}{|c|}{SUBTOTAL} &
   \multicolumn{1}{c|}{5520000} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} & \multicolumn{1}{c|}{23920000} 
+\multicolumn{3}{|c|}{TOTAL} & \multicolumn{1}{c|}{23920000}
    \\ \hline
 \end{tabularx}%
 \end{table}
@@ -377,14 +377,14 @@ Descripción &
 
 \begin{consigna}{red}
 a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
+
 Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
 \begin{itemize}
 	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
 	Justificar el motivo por el cual se asigna determinado número de severidad (S).
 	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
-\end{itemize}   
+	Justificar el motivo por el cual se asigna determinado número de (O).
+\end{itemize}
 
 Riesgo 2:
 \begin{itemize}
@@ -409,7 +409,7 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
+\rowcolor[HTML]{C0C0C0}
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
        &   &   &     &    &    &      \\ \hline
        &   &   &     &    &    &      \\ \hline
@@ -419,14 +419,14 @@ Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 \end{tabularx}%
 \end{table}
 
-Criterio adoptado: 
+Criterio adoptado:
 
 Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
- 
+
 Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
   Nueva asignación de S y O, con su respectiva justificación:
   \begin{itemize}
@@ -437,7 +437,7 @@ Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
 	\end{itemize}
 
 Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
+
 Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
 
 \end{consigna}
@@ -449,25 +449,25 @@ Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
 \begin{consigna}{red}
 Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
 
-\begin{itemize} 
+\begin{itemize}
 \item Req \#1: copiar acá el requerimiento con su correspondiente número.
 
 \begin{itemize}
 	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar.
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar. 
+	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar.
 \end{itemize}
 
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  
+Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.
 
-Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  
+Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.
 
 En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
 
 \end{consigna}
 
-\section{15. Procesos de cierre}    
+\section{15. Procesos de cierre}
 \label{sec:cierre}
 
 \begin{consigna}{red}
@@ -475,7 +475,7 @@ Establecer las pautas de trabajo para realizar una reunión final de evaluación
 
 \begin{itemize}
 	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
+	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar.
 	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, los problemas que surgieron y cómo se solucionaron:\\
 	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
 	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
