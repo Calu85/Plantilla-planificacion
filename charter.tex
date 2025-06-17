@@ -62,7 +62,9 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1      & Se completa hasta el punto 5 inclusive     & 13 de mayo de 2025 \\ \hline
 2      & Se completa hasta el punto 9 inclusive     & 20 de mayo de 2025 \\ \hline
 3      & Se completa hasta el punto 12 inclusive    & 27 de mayo de 2025 \\ \hline
-%4      & Se completa el plan	                                 & {día} de mayo de 2025 \\ \hline
+4      & Se completa el plan	                    & 3 de junio de 2025 \\ \hline
+5      & Correcciones a versión 4                   & 10 de junio de 2025 \\ \hline
+6      & Correcciones a versión 5                   & 17 de junio de 2025 \\ \hline
 
 % Si hay más correcciones pasada la versión 4 también se deben especificar acá
 
@@ -104,7 +106,7 @@ Se adjunta a esta acta la planificación inicial.
 
 La empresa Virtual Sense ofrece un servicio de monitoreo remoto de pacientes con enfermedades crónicas. Para este objetivo, la empresa posee una aplicación móvil que recolecta datos periódicamente, tales como presión arterial, saturación de oxígeno, glucemia, y otros indicadores de acuerdo a cada patología, desde dispositivos de medición vinculados a la plataforma. Estos datos son reportados a un sistema en el cual los profesionales médicos pueden acceder para realizar un seguimiento de los pacientes. Los pacientes, por su par parte, acceden también a contenido de consulta aprobado por su médico y a comunicación por chat con los profesionales.
 
-La recolección periódica de mediciones permite el procesamiento de datos de manera continua, lo que a su vez posibilita la detección temprana y automática de arritmias cardíacas asintomáticas y otros eventos adversos. La empresa ha encontrado gran adopción por parte de médicos con pacientes que habitan lugares remotos, para los quienes difícil o costoso la realización de visitas periódicas al consultorio.
+La recolección periódica de mediciones permite el procesamiento de datos de manera continua, lo que a su vez posibilita la detección temprana y automática de arritmias cardíacas asintomáticas y otros eventos adversos. La empresa ha encontrado gran adopción por parte de médicos con pacientes que habitan lugares remotos, para quienes es difícil o costoso la realización de visitas periódicas al consultorio.
 
 El stack de tecnología de la empresa consiste actualmente en una aplicación móvil que permite conectarse a diversos dispositivos (electrocardiógrafos, tensiómetros, etc). Esta aplicación reporta datos mediante protocolo HTTPS hacia Amazon Web Services y luego son almacenados utilizando MySQL. Un panel de control web permite a los profesionales acceder a los datos de sus pacientes, así como a los pacientes acceder a sus propios datos. Este panel posee los permisos de acceso necesarios para que los usuarios solo puedan acceder a sus propios datos, y los profesionales accedan solamente a los datos de sus pacientes. En la figura \ref{fig:diagBloques} se describe brevemente el sistema implementado por la empresa para los dispositivos ya integrados.
 
@@ -299,6 +301,8 @@ Cantidad total de horas: 610.
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
 
+En la figura \ref{fig:AoN} se observa del diagrama de Activity on Node para el proyecto. El camino crítico está resaltado en color rojo.
+
 \begin{figure}[htpb]
 \centering
 \includegraphics[width=.9\textwidth]{./Figuras/aon.pdf}
@@ -375,35 +379,53 @@ Descripción &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+a) Identificación de los riesgos y estimación de sus consecuencias:
 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+A continuación se identifican los riesgos asociados a la planificación del proyecto y se cuantifica la severidad y probabilidad de ocurrencia en una escala del 1 al 10.
+
+Riesgo 1: la empresa no adquiere las licencias de Omron en el tiempo previsto.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O).
+	\item Severidad: 10.\\
+	Sin estas licencias es imposible realizar el proyecto.
+	\item Ocurrencia: 3.\\
+	La empresa se comprometió a adquirirlas y el proceso no depende de envíos físicos.
 \end{itemize}
 
-Riesgo 2:
+Riesgo 2: la adquisición del tensiómetro se demora más del tiempo previsto.
 \begin{itemize}
-	\item Severidad (S): X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad: 7. \\
+	Esto demoraría la etapa de implementación.
+	\item Ocurrencia: 2.\\
+	Existen muchos distribuidores y canales de adquisición.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 3: se daña el tensiómetro durante el desarrollo del proyecto.
 \begin{itemize}
-	\item Severidad (S):  X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad:  8.\\
+	Son dispositivos costosos y su reemplazo excedería el presupuesto disponible.
+	\item Ocurrencia: 5.\\
+	Son instrumentos robustos y no hay necesidad de abrirlo o intervenirlo para realizar el proyecto.
 \end{itemize}
 
+Riesgo 4: se pierden los documentos y el código generado por daño, pérdida o robo de la computadora de trabajo.
+\begin{itemize}
+	\item Severidad: 9.\\
+	Si ocurren en una etapa avanzada, puede significar el abandono del proyecto.
+	\item Ocurrencia: 7.\\
+	Hay muchas causas que pueden provocar una pérdida de la herramienta de trabajo.
+\end{itemize}
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+Riesgo 5: cambios en el sistema de la empresa que vuelven incompatible el proyecto mientras se encuentra el desarrollo en curso.
+\begin{itemize}
+	\item Severidad: 8\\
+	Implicaría rehacer parte del trabajo, con las consiguientes demoras.
+	\item Ocurrencia: 2.\\
+	El producto se encuentra estable y se está en contacto con el equipo de desarrollo para mantenerse al tanto de posibles actualizaciones.
+\end{itemize}
+
+b) Tabla de gestión de riesgos:
+      
+El RPN se calcula como RPN=SxO, donde S es la severidad y O es la probabilidad de ocurrencia.
 
 \begin{table}[htpb]
 \centering
@@ -411,77 +433,139 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0}
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+1. La empresa no adquiere las licencias de Omron en el tiempo previsto. &  10 & 3  & 30 &  &  &      \\ \hline
+2. La adquisición del tensiómetro se demora más del tiempo previsto. & 7  & 2  & 14 &   &    &      \\ \hline
+3. Se daña el tensiómetro durante el desarrollo del proyecto. & 8 & 5 & 40	 & 8 & 2 & 14 \\ \hline
+4. Se pierden los documentos y el código generado. & 9 & 7 & 63 & 9 & 1 & 9 \\ \hline
+5. Cambios en el sistema de la empresa. & 8 & 2  & 16 & & &  \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado:
 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 30.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
 
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
+Riesgo 3: plan de mitigación 
+
+Se fabricará un dispositivo sencillo para mantener el tensiómetro fijo mientras se utiliza. Esto evitar manipularlo salvo cuando haya que probar mediciones reales.          
   \begin{itemize}
-	\item Severidad (S*): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O*): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+	\item Severidad: 8 \\
+	Son dispositivos costosos y su reemplazo excedería el presupuesto disponible.          
+	\item Ocurrencia: 2 \\
+	Se minimiza las instancias en las que hay que usar el dispositivo en un brazo real.
 	\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 4: plan de mitigación.
 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-
-\end{consigna}
-
+Se utilizará control de versiones, un repositorio remoto y almacenamiento de documentos online.
+  \begin{itemize}
+	\item Severidad: 9\\
+		Si ocurren en una etapa avanzada, puede significar el abandono del proyecto.
+	\item Ocurrencia: 1 \\
+		Todos los archivos estarán permanentemente sincronizados y versionados.
+	\end{itemize}
+	
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
+Para cada requisito del proyecto se planifican métodos de verificación y validación.
 
 \begin{itemize}
-\item Req \#1: copiar acá el requerimiento con su correspondiente número.
+\item Req 1.1: la aplicación de Virtual Sense se debe vincular con el dispositivo Omron
 
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar.
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar.
+	\item Verificación estableciendo una conexión entre la aplicación y el dispositivo usando varios modelos diferentes de celulares y observando el \textit{log} generado.
+	\item Validación con el cliente para confirmar que el proceso ocurre de acuerdo a lo esperado.
 \end{itemize}
 
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.
+\begin{itemize}
+\item Req 1.2: los valores medidos por el dispositivo deben ser ingresados a la aplicación.
 
-Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.
+\begin{itemize}
+	\item Verificación estableciendo una conexión entre la aplicación y el dispositivo usando varios modelos diferentes de celulares.
+	\item Validación con el cliente para confirmar que el proceso ocurre de acuerdo a lo esperado.
+\end{itemize}
 
-En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+\end{itemize}
 
-\end{consigna}
+\begin{itemize}
+\item Req 1.3: el usuario debe poder consultar los valores medidos en la aplicación.
+
+\begin{itemize}
+	\item La verificación se realizará tomando una medición y comprobando que el valor medido se ve en pantalla.
+	\item Validación siguiendo el mismo método por parte de un cliente.
+\end{itemize}
+
+\end{itemize}
+
+\begin{itemize}
+\item Req 1.4: las mediciones se deben enviar a la nube, junto con la fecha y hora en la que se realizaron y la identificación del paciente.
+
+\begin{itemize}
+	\item Para verificar el envío se contrastará la fecha, hora y paciente de la medición generada con los datos correspondientes almacenados en la nube.
+	\item Validación contrastando los datos con los mostrados en el panel de control.
+\end{itemize}
+
+\end{itemize}
+
+\begin{itemize}
+\item Req 2.1: generar las instrucciones de vinculación orientadas a los usuarios.
+
+\begin{itemize}
+	\item Verificación mediante presentación del documento ante la empresa.
+	\item Se validarán las instrucciones pidiendo a personas ajenas a la empresa que realicen la conexión y medición siguiendo el instructivo.
+\end{itemize}
+
+\end{itemize}
+
+\begin{itemize}
+\item Req 3.1: los datos se enviarán usando el protocolo actual de la empresa mediante HTTPS.
+
+\begin{itemize}
+	\item Se verificará el cumplimiento contrastando el paquete de datos enviado desde la aplicación con la información recibida y almacenada en el backend.
+	\item Validación comprobando que los datos vistos en el panel de control coincidan con los enviados desde la aplicación.
+\end{itemize}
+
+\end{itemize}
+
+\begin{itemize}
+\item Req 4.1: se debe indicar el estado de la conexión con el dispositivo.
+
+\begin{itemize}
+	\item Verificación consultando el \textit{log} generado por una conexión y contrastando con el estado mostrado en pantalla.
+	\item Validación mostrando la funcionalidad ante el cliente.
+\end{itemize}
+
+\end{itemize}
+
+\begin{itemize}
+\item Req 4.2: se deben mostrar los valores obtenidos luego de una medición.
+
+\begin{itemize}
+	\item Verificación tomando mediciones y contrastando el valor mostrado con el valor medido. Se guardará registro de los valores contrastados.
+	\item Validación ante el cliente realizando una medición.
+\end{itemize}
+
+\end{itemize}
 
 \section{15. Procesos de cierre}
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+El proceso de cierre del proyecto incluirá las siguientes instancias
 
 \begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar.
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, los problemas que surgieron y cómo se solucionaron:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
-	  - Indicar esto y quién financiará los gastos correspondientes.
+	\item Comprobación del cumplimiento de requisitos y análisis de problemas, desvíos respecto al plan y procedimientos empleados: de esta actividad participarán el autor del proyecto y el director.
+	
+	\item Transferencia de todos los entregables a Virtual Sense: toda la documentación y códigos generados durante el proyecto se entregarán al presidente de la empresa.
+	
+	\item Presentación pública del proyecto ante autoridades de la CEIoT.
 \end{itemize}
-
-\end{consigna}
 
 \end{document}
